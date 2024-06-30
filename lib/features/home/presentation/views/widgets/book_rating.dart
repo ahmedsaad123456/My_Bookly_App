@@ -10,12 +10,11 @@ class BookRating extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: alignment,
-      children:[
+      children: [
         const Icon(
           FontAwesomeIcons.solidStar,
           size: 14,
           color: Color(0xffFFDD4F),
-          
         ),
         const SizedBox(
           width: 6.3,

@@ -4,7 +4,6 @@ import 'package:my_bookly_app/features/home/presentation/views/widgets/custom_bo
 class SimilarBooksListView extends StatelessWidget {
   const SimilarBooksListView({super.key});
 
-  
   @override
   Widget build(BuildContext context) {
     return SizedBox(
