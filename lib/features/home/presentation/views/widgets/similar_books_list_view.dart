@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:my_bookly_app/features/home/presentation/views/widgets/custom_book_image.dart.dart';
 
-class FeaturedBooksListView extends StatelessWidget {
-  const FeaturedBooksListView({super.key});
+class SimilarBooksListView extends StatelessWidget {
+  const SimilarBooksListView({super.key});
 
+  
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.3,
+      height: MediaQuery.of(context).size.height * 0.15,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: 10,
         itemBuilder: (context, index) {
           return const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8.0),
+            padding: EdgeInsets.symmetric(horizontal: 5.0),
             child: CustomBookImage(),
           );
         },

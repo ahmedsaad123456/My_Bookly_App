@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:my_bookly_app/core/utils/app_router.dart';
 import 'package:my_bookly_app/core/utils/assets.dart';
-import 'package:my_bookly_app/features/home/presentation/views/home_screen.dart';
-import 'package:get/get.dart';
 
 import 'sliding_text.dart';
 
@@ -66,11 +65,11 @@ class _SplashViewbodyState extends State<SplashViewbody>
     Future.delayed(
       const Duration(seconds: 2),
       () {
-        Get.to(
-          () => const HomeScreen(),
-        );
+        // Get.to(
+        //   () => const HomeScreen(),
+        // );
 
-        // GoRouter.of(context).push(AppRouter.kHomeView);
+        GoRouter.of(context).push(AppRouter.kHomeView);
       },
     );
   }
