@@ -1,4 +1,9 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:my_bookly_app/core/utils/service_locator.dart';
+import 'package:my_bookly_app/features/home/data/models/book_model/book_model.dart';
+import 'package:my_bookly_app/features/home/data/repos/home_repo_impl.dart';
+import 'package:my_bookly_app/features/home/presentation/view_models/similar_books/similar_books_cubit.dart';
 import 'package:my_bookly_app/features/home/presentation/views/book_details_screen.dart';
 import 'package:my_bookly_app/features/home/presentation/views/home_screen.dart';
 import 'package:my_bookly_app/features/search/presentation/views/search_screen.dart';
@@ -21,7 +26,12 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kBookDetailsView,
-        builder: (context, state) => const BookDetailsScreen(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => SimilarBooksCubit(getIt.get<HomeRepoImpl>()),
+          child: BookDetailsScreen(
+            bookModel: state.extra as BookModel,
+          ),
+        ),
       ),
       GoRoute(
         path: kSearchView,
